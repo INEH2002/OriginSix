@@ -1,0 +1,675 @@
+/*===RESET===*/
+/* o asterisco é o seletor universal pega todas as tags*/
+* {
+  margin: 0; /*margem*/
+  padding: 0; /*preenchimento*/
+  box-sizing: border-box; /**/
+}
+
+ul {
+  list-style: none; /*vai tirar os pontinhos do menu (da lista inteira )*/
+}
+a {
+  text-decoration: none;
+}
+img {
+  /*para tirar do tamanho original*/
+  width: 100%;
+  height: auto;
+}
+/*===VARIABLES===*/
+:root {
+  /*r=root em=elemente*/
+  --header-height: 4.5rem;
+  /*colocar variável no pai */
+  /*--color: green;*/
+  --hue: 668; /*AQUI MUDAM AS CORES*/
+  /*HSL color mode*/
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body--color: hsl(0 0% 98%);
+  /*FONTS*/
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+  --title-font: /*'Poppings', sans-serif;*/ 'Yellowtail', cursive;
+  --body-font: /*'DM Sans', sans-serif;*/ 'Noto Serif', serif;
+}
+
+/*===BASE===*/
+html {
+  scroll-behavior: smooth; /**deixar a rolagem suave*/
+}
+
+body {
+  font: 400 1rem var(--body-font);
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+.title {
+  font: 700 var(--subtitle-font-size) var(--title-font);
+  /*colocar variável somente no h1*/
+  /* --color: red;
+  color: var(--color);*/
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+.button {
+  /*color: var(--color);*/
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem; /*56/16*/
+  /*display: inline; não vai receber uma h e w que estrapole o */
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem var(--body-font);
+  transform: background 0.3s;
+}
+.button:hover {
+  background: var(--base-color-alt);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1) 0%,
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
+  );
+}
+/* #69b99d 0%,
+    rgba(204, 244, 230, 0.34) 100%
+  ); gradient de uma cor mais clara par um cor mais forte*/
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+  );
+}
+
+/*===LAYOUT===*/
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.grid {
+  display: grid; /*habilitar novas funcionalidades*/
+  gap: 2rem; /* quando tem dois filhos faz espaço entres eles aplica a propriedade  em mais classes */
+}
+.section {
+  padding: calc(5rem + var(--header-height)) 0;
+}
+
+.section .title {
+  margin-bottom: 1rem; /*16 px*/
+}
+.section.subtitle {
+  font-size: var(--subtitle-font-size); /*FONTES*/
+}
+.section header {
+  margin-bottom: 4rem;
+}
+.section header strong {
+  color: var(--base-color);
+}
+#header {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #ffe1ff;
+}
+
+#hedear.scroll {
+  /* background: var(--base-color);*/
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  /*sombra da caixa*/
+}
+/*mudar as cores comforme a scroll*/
+/*#header.scroll .logo span {
+  color:pink;
+}
+#header.scroll .icon-menu{
+  color: aquamarine;
+}*/
+
+/*====logo==*/
+.logo {
+  font: 700 1.31rem var(--title-font);
+  color: var(--title-color);
+}
+.logo span {
+  /*para separa a cor na palavra*/
+  color: var(--base-color);
+}
+.logo-alt span {
+  color: var(--body--color);
+}
+/*===NAVIGATION===*/
+nav {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+/*paar que seja suave*/
+nav ul li a {
+  transition: color 0.2s; /*transição somente na cor*/
+  position: relative;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  /*font-weight: bold;*/
+  /*quando passar o mouse em cima */
+  color: var(--base-color);
+  /*-webkit-font-smoothing: auto;*/
+}
+
+nav ul li a::after {
+  /*after é um sudo element precisa ter :*/
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem; /*pára deixar p baixo*/
+
+  transition: width 0.2s;
+}
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+/*Mostra menu*/
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+nav .menu ul {
+  display: none;
+}
+
+nav.show .menu {
+  /*para quando o menu estiver aberto*/
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--text-color-light);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center; /*dimensiona os espaços */
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+/*===toggle menu=== interruptor troca de botão*/
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer; /*mãozinha do Mickey*/
+}
+nav .icon-close {
+  visibility: hidden; /*hidden== escomdido*/
+  opacity: 0;
+
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5em;
+
+  transition: 0.2s;
+}
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+
+  top: 1.5rem;
+}
+
+/*===HOMEE===*/
+#home {
+  overflow: hidden; /*OVERFLOW TRANSBORDAR*/
+}
+#home .container {
+  margin: 0;
+}
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  /*sudo element:consigo criar uma elemento ficticio no html*/
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -16.8%; /*h=405-->100% 68=?, regra de três =16.8%*/
+  left: 16.7%; /*97*100/581=16.7*/
+  z-index: 0; /*para o elemento ficara atrás da imagem*/
+}
+#home .image img {
+  position: relative;
+  right: 2.93rem;
+}
+#home .image img,
+#home .image::before {
+  /*recebem a mesma propriedade*/
+  border-radius: 0.25rem; /*4/16=0.25*/
+}
+#home .title {
+  font-size: 2rem;
+}
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+#home .text p {
+  margin-bottom: 1rem;
+}
+
+#home .text h1 {
+  margin-bottom: 2rem;
+  /*max-width: 100px;*/
+}
+/*===ABOUT===*/
+#about {
+  background: white;
+}
+#about .container {
+  margin: 0;
+}
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  /*sudo element:consigo criar uma elemento ficticio no html*/
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  left: -33%; /*h=581-->100% 192=?, 192*100/581 regra de três =33%*/
+  top: -8.3%; /*34*100/405=8.3*/
+  z-index: 0; /*para o elemento ficara atrás da imagem*/
+}
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  /*recebem a mesma propriedade*/
+  border-radius: 0.25rem /*4/16=0.25*/;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+#about .title {
+  font-size: 2rem;
+}
+/*======Services====*/
+.cards.grid {
+  gap: 1.5rem;
+}
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0; /*se deixar apenas 25rem aredonda as pontas*/
+  text-align: center;
+}
+
+/*.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}*/
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.card .img0 {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 25rem 25rem 25rem 25rem; /*se deixar apenas 25rem aredonda as pontas*/
+  text-align: center;
+}
+.card .img {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 25rem 25rem 25rem 25rem; /*se deixar apenas 25rem aredonda as pontas*/
+  text-align: center;
+}
+.card .img1 {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 16rem 16rem 16rem 16rem; /*se deixar apenas 25rem aredonda as pontas*/
+  text-align: center;
+}
+
+#services .title {
+  font-size: 2rem;
+}
+
+/*Testimonials*/
+#testimonials .title {
+  font-size: 2rem;
+}
+#testimonials {
+  background: white;
+}
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+#testimonials header {
+  margin-bottom: 1.5rem; /*para ajustar o depoimentos no título*/
+  margin-left: 1.5rem;
+  margin-right: 0;
+}
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--title-color);
+}
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+  position: absolute;
+  /*POSICIONAR O SPAN*/
+  top: -0.375rem;
+  left: -1.875rem;
+  color: var(--base-color);
+}
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal; /*fonte da escrita do nome*/
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover; /*pega o objet que está dentro da tag img e encaixe cobrindo os espaços */
+  clip-path: circle(); /*propriedade que criar um mácara circular*/
+  margin-right: 0.5rem; /*espaço entre o nome e a imagem*/
+}
+
+/* SWIPER*/
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+.swiper-pagination-bullet-active {
+  /*mudar a cor da bolinha*/
+  background: var(--base-color);
+}
+
+/*CONTACT*/
+#contact .grid {
+  gap: 4rem;
+}
+#contact .text p {
+  margin-bottom: 2rem;
+}
+#contact .button i,
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+  gap: 2rem;
+}
+#contact ul li {
+  display: flex;
+  align-items: center;
+}
+#contact ul li i {
+  color: var(--base-color);
+}
+
+footer {
+  background: var(--base-color);
+}
+footer.section {
+  padding: 4rem 0;
+}
+/*CTRL+F === PROCURAR UM ELEMENTO*/
+footer .logo {
+  /*no display: inline não temcomo colocar margin-bottom mas no display: inline-block*/
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+footer .brand p {
+  color: var(--text-color-light); /**par mudar a cor das palavras para branco*/
+  margin-bottom: 0.75rem; /*para dar espaço entre as palavras*/
+}
+footer i {
+  /**dimensionar os icones*/
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+footer .social a {
+  /* grid-auto-flow: column; pega linha toda e faz colunas */
+  margin-right: 2rem; /*empura pra direita*/
+  /*display: flex;distrava*/
+  /*gap: 2rem; um do lado do outro com 2rem de espaço*/
+  transition: 0.3s; /* sem ela não mexe*/
+  display: inline-block; /*par mexer os ícones a propriedade inline tem que ser block*/
+}
+footer .social a:hover {
+  transform: translateY(-15px); /*par cima então é negativo*/
+}
+/*Back to top*/
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateY(100%);
+  /* mexe no eixo X e Y== pq é vertical de baixo pra cima */
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*MEDIA QUERIES responsável por adicionar pontos de quebra break points */
+/* large  device: 1200>*/
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto; /*ajustar aoa meio a caixinha do header*/
+  }
+  .section {
+    padding: 10rem 0;
+  }
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button {
+    height: 3.125rem;
+  }
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none; /**esconder o ícone do menu*/
+  }
+  main {
+    margin-top: var(--header-height);
+  }
+  /*Home*/
+  #home .container {
+    grid-auto-flow: column;
+    /*width: fit-content;*/
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  #home .image {
+    order: 1;
+  }
+  #home .text {
+    max-width: 24rem;
+    text-align: left;
+    order: 0; /*deixa a imagem depois do texto no home só é possível por causa do grid*/
+  }
+  /*about*/
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+  /*services*/
+  .cards {
+    /*três colunas*/
+    grid-template-columns: 1fr 1fr 1fr; /*3 frações flexíveis*/
+  }
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  /*testimonials*/
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/*CONTACT*/
+#contact .container {
+  grid-auto-flow: column;
+  align-items: center;
+}
+#contact .title {
+  font-size: 2rem;
+}
+#contact .text {
+  max-width: 25rem; /*limite de largura*/
+}
+/*footer*/
+footer.section {
+  padding: 3.75rem 0;
+}
+footer.container {
+  grid-auto-flow: column;
+  align-items: center;
+  /*Esspaço entre o texto e os ícones*/
+  justify-content: space-between;
+}
+footer .logo {
+  font-size: 2.25rem;
+}
+/* large device: 992>*/
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
+
+/* medium devices: 767 > */
+/*@media (min-width: 767px) {*
+  :root {
+    --title-font-size: 1.5rem;
+    --subtitle-font-size: 0.7rem;
+  }
+  body .container {
+    max-width: 747px;
+    margin-left: auto;
+  }
+
+  #about .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #about .container h2.title {
+    margin-left: 1.5rem;
+  }
+  #services .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #services .container .title {
+    margin-left: 1.5rem;
+  }
+}*/

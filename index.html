@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <!--root-->
+  <!--Emment já da a base pronta só colocar um ponto de exclamação e dar enter -->
+  <head>
+    <!--restante da página, não o corpo-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--deixa o doc mais flexível para cada dispositivo-->
+    <title>OriginSix</title>
+
+    <!--==ICONS==-->
+    <link rel="stylesheet" href="assets/icomoon/style.css" />
+    <!--SWIPER-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="style.css" />
+    <!--fonts-->
+    <!--<link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header id="header" class="scroll">
+      <nav class="container">
+        <!--elementos de click de navegação-->
+        <a class="logo" href="#">Flowers<span>InêH</span>.</a>
+        <!--com a class pode ter mais de uma logo-->
+        <div class="menu">
+          <!--
+          <ul>-->
+          <!--lista não ordenada-->
+          <!--<li>  item da lista-->
+          <!--</li>-->
+          <!-- </ul>-->
+          <ul class="grid">
+            <li><a class="title" href="#home">Início</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <li><a class="title" href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <!-- /menu-->
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
+      </nav>
+    </header>
+
+    <main>
+      <!--===HOME==-->
+      <section class="section" id="home">
+        <div class="container grid">
+          <!--da para colocar duas dois nomes na mesma classe--> 
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1622297436386-705b75ab1f2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
+              alt="flor de fundo"
+            />
+          </div>
+          <div class="text">
+            <h2 class="title">
+              Presenteie quem você ama com o aroma das flores
+            </h2>
+            <p>
+              A melhor floricultura para floramadores ,se você é um venha nos
+              visitar.
+            </p>
+            <a class="button" href="#">Faça seu pedido</a>
+          </div> 
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!--===ABOUT==-->
+      <!--.section.section#about>.container.grid-->
+      <section class="section" id="about">
+        <div class="container grid">
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1565695951564-007d8f297e48?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80"
+              alt="flores"
+            />
+          </div>
+          <div class="text">
+            <!-- h2.title+p*3-->
+            <h2 class="title">Sobre nós</h2>
+            <p>
+                Nossa floricultura surgiu no ano de 2020 <br>
+              Momento em todos foram obrigados a se separar<br>
+              e decicididamente ficar em casa. <br>
+              Então pensando em trazer um pouco da natureza <b>
+                  para os lares das pessoas surgiu o nosso <br>
+                  delivery FLOWERS <br>
+            </p>
+            <br />
+            <p>
+              Somos um empresa que busca a satisfação do cliente por levar o seu pedido até a redisência  com todos os cuidados, garantindo a sensação de felicidade ao receber flores.
+            </p>
+            <br />
+            <p>
+              Deixando o ambiente muito mais aprazível.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+      <!--===SERVICES==-->
+
+      <section class="section" id="services">
+        <div class="container grid">
+          <header>
+            <h2 class="title">Serviços</h2>
+            <p class="subtitle">
+            A   floricultura <strong>FlowersInêH</strong> já
+              conquistou muitos clientes<br> e ainda vem fazendo parte da história de muitas pessoas.
+            </p>
+          </header>
+          <div class="cards grid">
+            <!--.card*3>(.icon-)+h3.title+p-->
+            <div class="card">
+             <!-- <i class="icon-woman-hair"></i>-->
+             <img src="https://images.unsplash.com/photo-1589244159943-460088ed5c92?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80" alt="" class="img0">
+              <h3 class="title">Flores de todos os tamanhos</h3>
+              <p>
+               Escolha a sua flor e decore o seu vaso como quiser.
+              </p>
+            </div>
+            <div class="card">
+             <!--  <i class="icon-trim"></i>-->
+             <img class="img" src="https://images.unsplash.com/photo-1560243563-62087d88da39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="teste">
+             
+              <h3 class="title">Flores de todas as variedades</h3>
+              <p>
+                Todas as espécies que imaginar!!!
+              </p>
+            </div>
+            <div class="card">
+             <!-- <i class="icon-cosmetic"></i>--> 
+             <img src="https://images.unsplash.com/photo-1461005490174-1d69ffda0669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=753&q=80" alt="teste" class="img1">
+            
+              <h3 class="title">Delivery</h3>
+              <p>
+                Escolha presentera quem você ama enviando o presente diretamente em sua residência
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-1"></div>
+
+      <!--===tesmonials==-->
+      <section class="section" id="testimonials">
+        <div class="container">
+          <header>
+            <h2 class="title">Cartinhas dos clientes:</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <!--===uma caixa testimonials com vários depoimentos==-->
+            <!--.testimonial*3-->
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <!--blockquote que alguém falo e não eu, um depoimento-->
+                  <p>
+                    <span>&ldquo;</span>
+                    <!--&ldquo caracter especial-->
+                    <!-- <span>&lt;span</span> para escrever span tag reservada-->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Autem quod unde incidunt dignissimos praesentium commodi
+                    rerum amet? Recusandae molestias iste excepturi ad
+                    voluptatum, dolor omnis labore debitis reprehenderit est
+                    incidunt.
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/47.jpg"
+                      alt="foto de  Wanesssa Souza"
+                    />
+                    Wanesssa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <!--blockquote que alguém falo e não eu, um depoimento-->
+                  <p>
+                    <span>&ldquo;</span>
+                    <!--&ldquo caracter especial-->
+                    <!-- <span>&lt;span</span> para escrever span tag reservada-->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Autem quod unde incidunt dignissimos praesentium commodi
+                    rerum amet? Recusandae molestias iste excepturi ad
+                    voluptatum, dolor omnis labore debitis reprehenderit est
+                    incidunt.
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/82.jpg"
+                      alt="foto de Daiana "
+                    />
+                    Daiana Matozzo
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <!--blockquote que alguém falo e não eu, um depoimento-->
+                  <p>
+                    <span> &ldquo;</span>
+                    <!--&ldquo caracter especial-->
+                    <!-- <span>&lt;span</span> para escrever span tag reservada-->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Autem quod unde incidunt dignissimos praesentium commodi
+                    rerum amet? Recusandae molestias iste excepturi ad
+                    voluptatum, dolor omnis labore debitis reprehenderit est
+                    incidunt.
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/66.jpg"
+                      alt="foto de wamderleia"
+                    />
+                    Wamderléia Assis
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      <div class="divider-2"></div>
+
+      <!--===contact==-->
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <!--h2.title-->
+            <h2 class="title">Entre em conosco!Será um aroma conversar com você!</h2>
+            <p>Marque um horário para conhecer nossa loja fisíca ou faça seu pedido onlline</p>
+
+            <a
+              href=" https://api.whatsapp.com/send?phone=+55999876534&text=Oi,Gostaria de agendar um horário"
+              class="button"
+              target="_blank"
+              ><i class="icon-whatsapp"></i>Entrar em contato</a
+            >
+          </div>
+
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i>71 9999-00098</li>
+              <li><i class="icon-map-pin"></i>Av julio de mailhos</li>
+              <li><i class="icon-mail"></i>flowersbrand@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div class="divider-1"></div>
+    </main>
+
+    <footer class="section">
+      <!--para criar uma clase .container.grid-->
+      <div class="container grid">
+        <div class="brand">
+          <a class="logo logo-alt" href="#home">Flowers<span>InêH</span>.</a>
+          <p>©2021 FlowersInêH.</p>
+          <p>Todos os direitos reservados.</p>
+        </div>
+
+        <div class="social">
+          <a href="https://instagram.com" target="_blank">
+            <i class="icon-instagram"></i>
+          </a>
+          <a href="https://facebook.com"> <i class="icon-facebook"></i></a>
+          <a href="https://youtube.com" target="_blank"
+            ><i class="icon-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
+    <!--swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--scrollreveal-->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--main.js-->
+    <script src="main.js"></script>
+  </body>
+</html>
